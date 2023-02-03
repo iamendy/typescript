@@ -14,12 +14,25 @@ console.log(user)
 
 //Type Alias
 type User = {
-  name: string,
-  age: number,
+  readonly _id: string
+  name: string
+  age: number
   isActive: boolean
+  creditCardDetails?: string
 }
 
 function createNewUser (user: User): User {
   //do db manipulations
   return user
 }
+
+let newUser = createNewUser({
+  _id: "1121",
+  name: "Nnamdi",
+  age: 30,
+  isActive: true
+})
+
+console.log(newUser)
+
+
